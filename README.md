@@ -1,2 +1,2 @@
 # Math455Project
-Final projectfor Math 455
+Final project for Math 455
