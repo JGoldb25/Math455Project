@@ -1,0 +1,123 @@
+#Histograms
+library(ggplot2)
+
+#Histogram for Area (Pre-Log Transform) 
+ggplot(data=data, aes(data$area)) + 
+geom_histogram(breaks=seq(0, 1100, by = 20),
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) + 
+geom_density(col=3) + 
+labs(title = "Histogram for Area") +
+labs(x="Area", y="Frequency")
+
+#Histogram for Month (Pre-Log Transform - Months Alphabetical)
+ggplot(data=data, aes(data$month)) + 
+  geom_histogram(breaks=seq(1, 15, by = 1),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) + 
+  geom_density(col=3) + 
+  labs(title = "Histogram for Month") +
+  labs(x="Month", y="Frequency")
+  
+#Histogram for Day (Pre-Log Transform - Days Alphabetical)
+ggplot(data=data, aes(data$day)) + 
+  geom_histogram(breaks=seq(1, 7, by = 1),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +  
+  geom_density(col=3) + 
+  labs(title = "Histogram for Day") +
+  labs(x="Day", y="Frequency")
+
+##Histogram for FFMC (Pre-Log Transform)
+ggplot(data=data, aes(data$FFMC)) + 
+  geom_histogram(breaks=seq(15, 100, by = 5),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +  
+  geom_density(col=3) + 
+  labs(title = "Histogram for FFMC") +
+  labs(x="FFMC", y="Frequency")
+
+#Histogram for DMC (Pre-Log Transform)
+ggplot(data=data, aes(data$DMC)) + 
+  geom_histogram(breaks=seq(0, 300, by = 30),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +
+  geom_density(col=3) + 
+  labs(title = "Histogram for DMC") +
+  labs(x="DMC", y="Frequency")
+
+#Histogram for DC (Pre-Transform)
+ggplot(data=data, aes(data$DC)) + 
+  geom_histogram(breaks=seq(5, 865, by = 25),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +
+  geom_density(col=3) + 
+  labs(title = "Histogram for DC") +
+  labs(x="DC", y="Frequency")
+
+#Histogram for ISI (Pre-Log Transform)
+ggplot(data=data, aes(data$ISI)) + 
+  geom_histogram(breaks=seq(0, 60, by = 5),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +
+  geom_density(col=3) + 
+  labs(title = "Histogram for ISI") +
+  labs(x="ISI", y="Frequency")
+
+#Histogram for Temp (Pre-Log Transform)
+ggplot(data=data, aes(data$temp)) + 
+  geom_histogram(breaks=seq(0, 36, by = 2),
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +
+  geom_density(col=3) + 
+  labs(title = "Histogram for Temp") +
+  labs(x="temp", y="Frequency")
+
+#Histogram for RH (Pre-Transform)
+ggplot(data=data, aes(data$RH)) + 
+  geom_histogram(breaks=seq(10, 105, by = 5),
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +
+  geom_density(col=3) + 
+  labs(title = "Histogram for RH") +
+  labs(x="RH", y="Frequency")
+
+#Histogram for Wind (Pre-Transform)
+ggplot(data=data, aes(data$wind)) + 
+  geom_histogram(breaks=seq(0, 10, by = 1),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +
+  geom_density(col=3) + 
+  labs(title = "Histogram for Wind") +
+  labs(x="Wind", y="Frequency")
+
+#Histogram for Rain (Pre-Transform)
+ggplot(data=data, aes(data$rain)) + 
+  geom_histogram(breaks=seq(0, 7, by = .5),
+                 stat = "count",
+                 col="black", 
+                 fill="blue",
+                 alpha = 0.7) +
+  geom_density(col = 3) + 
+  labs(title = "Histogram for Rain") +
+  labs(x="Rain", y="Frequency")
+
+#Pairwise Scatterplot (Pre-Log Transformation)
+pairs(data, main="Simple Scatterplot Matrix")
