@@ -1,0 +1,77 @@
+\section{Data Summary}
+\label{S:4}
+
+\begin{flushleft}
+	\subsection{Initial Summary}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l l l I I}
+		\hline
+		\textbf{Total Attributes}&\textbf{Numerical}&\textbf{Categorical}&\textbf{Total Instances}&\textbf{Response Variable} \\
+		\hline
+		13 & 9 & 4 & 517 & area\\
+		\hline
+	\end{tabular}
+	\caption{Broad Level Data Details}
+\end{table}
+
+In our analysis, we were looking to see which factors had the greatest impact on how much area would be burned during a forest fire in Portugal. As all of our predictors were important in trying to determine our response variable, we were not inclined to remove any of the 12 predictors in our data set. However, among all 517 entries in our data set, the {\it rain} variable only contained six non-zero entries (due to the widespread lack of rain in the area), which we decided to exclude considering how few data points there were for the factor.
+
+\subsection{Missing Data}
+Our data came directly from the UCI Repository. Thus, the data set contained no missing entries, which tremendously helps in making the data analysis that much more accurate. Had we needed to replace any missing values, we would have used multiple imputation techniques to do so.\\
+\\
+Thus, our data set has 517 complete cases.
+
+\subsection{Complete Cases}
+Below are summary statistics on our 9 numerical and 4 categorical variables. Additionally, below you will see our response variable's distribution (which you'll notice is very right skewed), and our correlation chart to examine possible relationships between predictors.
+
+	\begin{table}[b!]
+	\centering
+	\begin{tabular}{l l l I I I I I I I}
+		\hline
+		\textbf{Index}&\textbf{FFMC}&\textbf{DMC}&\textbf{DC}&\textbf{ISI}&\textbf{temp}&\textbf{RH}&\textbf{wind}&\textbf{rain}&\textbf{area}\\
+		\hline
+		mean & 90.6 & 110.9 & 547.9 & 9.0 & 18.9 & 44.29 & 4.0 & 0.0 & 12.9 \\ 
+		median & 91.6 & 108.3 & 664.2 & 8.4 & 19.3 & 42 & 4 & 0 & 0.5 \\
+		std & 5.5 & 64.1  & 248.1 & 4.6 & 5.8 & 16.3 & 1.8 & 0.3 & 63.7 \\
+		min & 18.7 & 1.1 & 7.9 & 0 & 2.2 & 15 & 0.4 & 0 & 0 \\
+		max & 96.2 & 291.3 & 860.6 & 56.1 & 33.3 & 100 & 9.4 & 6.4 & 1090.8 \\
+		range & 77.5 & 290.2 & 852.7 & 52.1 & 31.1 & 85 & 9.4 & 6.4 &1090.8 \\
+		\hline
+	\end{tabular}
+	\caption{Summary Statistics on Numerical Variables} 
+\end{table}
+
+	\begin{table}[h]
+	\centering
+	\begin{tabular}{l l l I}
+		\hline
+		\textbf{month}&\textbf{day}&\textbf{Longitudinal X}&\textbf{Latitudinal Y}}\\
+		\hline
+		Jan: 2 & Mon: 74 & 1: 48 & 1: 0 \\ 
+		Feb: 20 & Tue: 64 & 2: 73 & 2: 44 \\
+		Mar: 54 & Wed: 54  & 3: 55 & 3: 64  \\
+		Apr: 9 & Thu: 61 & 4: 91 & 4: 203 \\
+		May: 2 & Fri: 85 & 5: 30 & 5: 125 \\
+		Jun: 17 & Sat: 84 & 6: 86 & 6: 74  \\
+		Jul: 32 & Sun: 95 & 7: 60 & 7: 0  \\
+		Aug: 184 &  & 8: 61 & 8: 1  \\
+		Sep: 172 &  & 9: 13 & 9: 6  \\
+		Oct: 15 &  &  &  \\
+	    Nov: 1 & &  &  \\
+		Dec: 9 &  &  &  \\
+		\hline
+	\end{tabular}
+	\caption{Frequency of Categorical Variables} 
+\end{table}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{"../DENSITY PLOTS/Area Density Plot"}
+	\caption{Burnt Area of Forest Fires}
+	\label{fig:area-density-plot}
+\end{figure}
+
+Here in Table 2, we get a closer look at the summary metrics of the numerical variables in our data set. We can examine several of these statistics in particular to understand the distributions of these data better. For example, most of the predictors have small standard deviations, other than {\it area} and {\it DC}. Moreover, the
+ranges for most of these variables are big, especially for {\it area} and {\it DC} once again, and arguably {\it DMC} as well. Additionally, we can tell how far apart the mean and median values are for {\it area} and {\it DC} which hints at these predictors not having skewed distributions. As the density plot for {\it area} is heavily skewed to the right, we will try several transformations ito normalize this data, starting with the predictors in the data set - notably, we will use the Box Cox transformation.
