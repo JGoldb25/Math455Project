@@ -36,3 +36,23 @@ data$day[data$day == "sat"] <- 6
 data$day[data$day == "sun"] <- 7
 data$day <- as.numeric(data$day)
 unique(data$day)
+
+#Changing Months to Seasons
+colnames(data)[colnames(data)=="month"] <- "season"
+unique(data$season)
+data$season <- as.character(data$season)
+data$season[data$season == "jan"] <- 4
+data$season[data$season == "feb"] <- 4
+data$season[data$season == "mar"] <- 1
+data$season[data$season == "apr"] <- 1
+data$season[data$season == "may"] <- 1
+data$season[data$season == "jun"] <- 2
+data$season[data$season == "jul"] <- 2
+data$season[data$season == "aug"] <- 2
+data$season[data$season == "sep"] <- 3
+data$season[data$season == "oct"] <- 3
+data$season[data$season == "nov"] <- 3
+data$season[data$season == "dec"] <- 4
+data$season <- as.numeric(data$season)
+unique(data$season)
+
