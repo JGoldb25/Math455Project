@@ -6,24 +6,6 @@ data=read.table("forestfires.csv",sep=",",header=TRUE)
 
 head(data)
 
-# Cleaning Month
-unique(data$month)
-data$month <- as.character(data$month)
-data$month[data$month == "jan"] <- 1
-data$month[data$month == "feb"] <- 2
-data$month[data$month == "mar"] <- 3
-data$month[data$month == "apr"] <- 4
-data$month[data$month == "may"] <- 5
-data$month[data$month == "jun"] <- 6
-data$month[data$month == "jul"] <- 7
-data$month[data$month == "aug"] <- 8
-data$month[data$month == "sep"] <- 9
-data$month[data$month == "oct"] <- 10
-data$month[data$month == "nov"] <- 11
-data$month[data$month == "dec"] <- 12
-data$month <- as.numeric(data$month)
-unique(data$month)
-
 # Cleaning Day
 unique(data$day)
 data$day <- as.character(data$day)
@@ -55,4 +37,22 @@ data$season[data$season == "nov"] <- 3
 data$season[data$season == "dec"] <- 4
 data$season <- as.numeric(data$season)
 unique(data$season)
+
+# Cleaning Month -- NOT USING
+unique(data$month)
+data$month <- as.character(data$month)
+data$month[data$month == "jan"] <- 1
+data$month[data$month == "feb"] <- 2
+data$month[data$month == "mar"] <- 3
+data$month[data$month == "apr"] <- 4
+data$month[data$month == "may"] <- 5
+data$month[data$month == "jun"] <- 6
+data$month[data$month == "jul"] <- 7
+data$month[data$month == "aug"] <- 8
+data$month[data$month == "sep"] <- 9
+data$month[data$month == "oct"] <- 10
+data$month[data$month == "nov"] <- 11
+data$month[data$month == "dec"] <- 12
+data$month <- as.numeric(data$month)
+unique(data$month)
 
