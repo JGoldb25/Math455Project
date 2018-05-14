@@ -16,7 +16,7 @@
 	\caption{Broad Level Data Details}
 \end{table}
 
-In our analysis, we were looking to see which factors had the greatest impact on how much area would be burned during a forest fire in Portugal. As all of our predictors were important in trying to determine our response variable, we were not inclined to remove any of the 12 predictors in our data set. However, among all 517 entries in our data set, the {\it rain} variable only contained six non-zero entries (due to the widespread lack of rain in the area), which we decided to exclude considering how few data points there were for the factor.
+In our analysis, we were looking to see which factors had the greatest impact on how much area would be burned during a forest fire in Portugal. When examining the correlation plot among all our variables, we were not inclined to remove any of the 12 predictors in our data set as none of the predictors exhibited a strong relationship with Area. 
 
 \subsection{Missing Data}
 Our data came directly from the UCI Repository. Thus, the data set contained no missing entries, which tremendously helps in making the data analysis that much more accurate. Had we needed to replace any missing values, we would have used multiple imputation techniques to do so.\\
@@ -37,7 +37,7 @@ Below are summary statistics on our 9 numerical and 4 categorical variables. Add
 		std & 5.5 & 64.1  & 248.1 & 4.6 & 5.8 & 16.3 & 1.8 & 0.3 & 63.7 \\
 		min & 18.7 & 1.1 & 7.9 & 0 & 2.2 & 15 & 0.4 & 0 & 0 \\
 		max & 96.2 & 291.3 & 860.6 & 56.1 & 33.3 & 100 & 9.4 & 6.4 & 1090.8 \\
-		range & 77.5 & 290.2 & 852.7 & 52.1 & 31.1 & 85 & 9.4 & 6.4 &1090.8 \\
+		range & 77.5 & 290.2 & 852.7 & 52.1 & 31.1 & 85 & 9.4 & 6.4 & 1090.8 \\
 		\hline
 	\end{tabular}
 	\caption{Summary Statistics on Numerical Variables} 
@@ -74,4 +74,4 @@ Below are summary statistics on our 9 numerical and 4 categorical variables. Add
 \end{figure}
 
 Here in Table 2, we get a closer look at the summary metrics of the numerical variables in our data set. We can examine several of these statistics in particular to understand the distributions of these data better. For example, most of the predictors have small standard deviations, other than {\it area} and {\it DC}. Moreover, the
-ranges for most of these variables are big, especially for {\it area} and {\it DC} once again, and arguably {\it DMC} as well. Additionally, we can tell how far apart the mean and median values are for {\it area} and {\it DC} which hints at these predictors not having skewed distributions. As the density plot for {\it area} is heavily skewed to the right, we will try several transformations ito normalize this data, starting with the predictors in the data set - notably, we will use the Box Cox transformation.
+ranges for most of these variables are big, especially for {\it area} and {\it DC} once again, and arguably {\it DMC} as well. Additionally, we can tell how far apart the mean and median values are for {\it area} and {\it DC} which hints at these predictors not having skewed distributions. As the density plot for {\it area} is heavily skewed to the right, we will try several transformations to normalize this data - inclduing Box Cox, logarithms, etc.
